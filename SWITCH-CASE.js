@@ -1,57 +1,58 @@
-function determinarGanador(jugador1, jugador2) {
+
+function Ganador(player, player2) {
     let mensaje = "";
   
-    switch (jugador1) {
-      case "T":
-        switch (jugador2) {
-          case "T":
-            mensaje = "Empate";
+    switch (player) {
+      case "Tijera":
+        switch (player2) {
+          case "papel":
+            mensaje = "tijeras gana a papel. win player";
             break;
-          case "R":
-            mensaje = "Tijeras son aplastadas por roca. Gana el jugador 2";
+          case "Roca":
+            mensaje = "Tijeras pierde por roca. win player 2";
             break;
-          case "P":
-            mensaje = "Roca es cubierta por papel. Gana el jugador 1";
+          case "tijera":
+            mensaje = "Roca gana a tijera. win player 2";
             break;
-          default:
-            mensaje = "Jugador 2 seleccionó una opción inválida";
-            break;
-        }
-        break;
-      case "R":
-        switch (jugador2) {
-          case "T":
-            mensaje = "Tijeras son aplastadas por roca. Gana el jugador 1";
-            break;
-          case "R":
-            mensaje = "Empate";
-            break;
-          case "P":
-            mensaje = "Roca es cubierta por papel. Gana el jugador 2";
-            break;
-          default:
-            mensaje = "Jugador 2 seleccionó una opción inválida";
+          case "tijera":
+            mensaje = "nadie gana";
             break;
         }
         break;
-      case "P":
-        switch (jugador2) {
-          case "T":
-            mensaje = "Roca es cubierta por papel. Gana el jugador 1";
+      case "Roca":
+        switch (player2) {
+          case "papel":
+            mensaje = "roca pierde por papel. win player 2";
             break;
-          case "R":
-            mensaje = "Papel cubre roca. Gana el jugador 1";
+          case "Roca":
+            mensaje = "Empate";
             break;
-          case "P":
+          case "tijera":
+            mensaje = "Roca gana tijera. win player";
+            break;
+          default:
+            mensaje = "player 2 no quiso jugar mas";
+            break;
+        }
+        break;
+      case "Papel":
+        switch (player2) {
+          case "Tijera":
+            mensaje = " win player";
+            break;
+          case "Roca":
+            mensaje = "win player";
+            break;
+          case "Papel":
             mensaje = "Empate";
             break;
           default:
-            mensaje = "Jugador 2 seleccionó una opción inválida";
+            mensaje = "player 2 no quiere jugar mas";
             break;
         }
         break;
       default:
-        mensaje = "Jugador 1 seleccionó una opción inválida";
+        mensaje = "pleyer tampoco quiere jugar";
         break;
     }
   
