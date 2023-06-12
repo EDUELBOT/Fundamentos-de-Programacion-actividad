@@ -60,6 +60,6 @@ function Ganador(player, player2) {
   }
   
   
-  const resultado = determinarGanador(jugador1, jugador2);
+  const resultado = determinarGanador(player, player2);
   console.log(resultado);
   
